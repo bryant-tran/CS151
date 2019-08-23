@@ -1,0 +1,12 @@
+Your name: Bryant tran
+Your student ID: 011901656
+Your major: Computer Science
+Your preferred email address: tranbryant0098@gmail.com
+Check one: [X] Undergraduate, [ ] Graduate, [ ] Open university 
+Repeating the class? [ ] Yes, [X] No
+Place and semester where you took a programming course in Java: SJSU semester 1 
+Course number and grade received: 46A with an A
+Place and semester where you took a course in data structures: SJSU semester 2
+Course number and grade received: 46B with an A-
+Time it took you to answer the two questions below: 
+Did you ask anyone for help? [ ] Yes, [X] No

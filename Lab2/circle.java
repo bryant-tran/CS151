@@ -4,31 +4,52 @@ import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.*;
 
-public class circle implements Icon 
+public class circle extends JComponent 
 {
-	public int width;
 	
-	public circle(int aWidth)
+	public circle()
 	{
-		width = aWidth;
+		setDoubleBuffered(false);
 	}
 	
-	public int getIconWidth()
+	protected void paintComponent(Graphics g)
 	{
-	    return width;
+		if(image == null)
+		{
+			image = createImage(getSize().width, getSize().height);
+			graphics = (Graphics2D) image.getGraphics();
+			graphics.clearRect(0, 0, getSize().width, getSize().height);
+		}
+		g.drawImage(image, 0, 0, null);
 	}
 	
-	public int getIconHeight()
+	public void makeBlue()
 	{
-		return width;
+		graphics.clearRect(0, 0, getSize().width, getSize().height);
+		graphics.setPaint(Color.blue);
+		graphics.fillArc(50, 50, 400, 400, 0, 360);
+		repaint();
 	}
 	
+	public void makeRed()
+	{
+		graphics.clearRect(0, 0, getSize().width, getSize().height);
+		graphics.setPaint(Color.red);
+		graphics.fillArc(50, 50, 400, 400, 0, 360);
+		repaint();
+	}
+	
+	public void makeGreen()
+	{
+		graphics.clearRect(0, 0, getSize().width, getSize().height);
+		graphics.setPaint(Color.green);
+		graphics.fillArc(50, 50, 400, 400, 0, 360);
+		repaint();
+	}
 
-	public void paintIcon(Component c, Graphics g, int x, int y)
-	{
-		Graphics2D g2 = (Graphics2D) g;
-		Ellipse2D.Double circle = new Ellipse2D.Double(x, y, width,width);
-				
-	}
-	}
+	private Image image;
+	private Graphics2D graphics;
 }
+
+
+

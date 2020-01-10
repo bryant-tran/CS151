@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue11;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 7.1 Why is there a Class object to represent void even though there is no void type?
+\f1\b0\fs24 \
+There is a class object to represent void even though there is no void type because the class is there to show that a method has a void return type or that there is no return value. It is mainly to support compile-time checking.\
+\
+
+\f0\b\fs28 9.1 In the program in Section 9.1, is it possible that both threads are sleeping at the same time? That neither of the two threads is sleeping at a particular time? Explain
+\f1\b0\fs24 \
+It is not possible for both threads to be sleeping the same time because when the tasks are finished service.shutdown() will terminate the threads. Since they are terminated right when they are finished there is no time for both to be sleeping as it is running continuously. However it is possible for neither threads to be sleeping at one time or in other words running in parallel. This depends on the Java virtual machine because if the Java virtual machine has 2 or more cores then reach thread can run in parallel but if there is only 1 core then the virtual machine will execute each thread for a short amount of time then switch to the other.\
+  \cf2 \
+
+\f0\b\fs28 \cf0 9.2 Give an example why you would want to terminate a thread in a Web browser program.
+\f1\b0\fs24 \
+You would want to terminate a thread in a Web browser to improve efficiency and save memory. For example if you use threads to load a lot of images you can terminate the thread after it finishes loading the images so that the thread will not be taking up memory space.\
+\
+
+\f0\b\fs28 9.3 What is the difference between a thread that sleeps by calling sleep and a thread that waits by calling wait?
+\f1\b0\fs24 \
+Using thread.sleep() means that the process will pause for the time we want it to but thread.await() it will block the thread and put it in a waiting state until either signal or signalAll is called by another thread. This means that sleep will have the thread just pause for a certain amount of time but await will have the thread wait indefinitely until it is called again by signal or signalAll.\
+\
+
+\f0\b\fs28 9.4 What happens when a thread calls await and no other thread calls signalAll or signal?
+\f1\b0\fs24 \
+If a thread calls await and no other thread calls signalAll or signal then the thread will enter a blocked state and stay in that state.\
+\
+
+\f0\b\fs28 9.5 Suppose you call wait instead of await on a condition object in the BoundedQueue class that uses a ReentrantLock. Will the call compile? What will it do?
+\f1\b0\fs24 \
+The call will compile if wait is used instead of await. The difference is that wait only works with one and only one lock of an instance but await can be used with multiple locks.\
+\
+\
+}
